@@ -11,7 +11,7 @@ I am now trying to correctly represent and compare the average temperature evolu
 - PHP Symfony framework (Skeleton)
 - Composer
 - Symfony AssetMapper
-- Symfony UX
+- Symfony UX Chart.js
 
 ## License
 MIT

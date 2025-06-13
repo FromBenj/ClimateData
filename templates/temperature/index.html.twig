@@ -1,6 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Temperature Data Analysis</h1>
-    {{ render_chart(temper_chart) }}
+    {% include 'components/dropdown-menu.html.twig' %}
+    <h1 id="website-title" class="text-center m-5 p-3">Earth's Temperature Evolution Analysis</h1>
+    <h2 class="text-center mt-5">{{ title }}</h2>
+    <div class="d-flex justify-content-center align-items-center">
+        <div id="temper-chart" class="w-75 h-75">
+            {{ render_chart(temper_chart) }}
+        </div>
+    </div>
 {% endblock %}
