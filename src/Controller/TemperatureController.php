@@ -114,7 +114,7 @@ final class TemperatureController extends AbstractController
         ]);
 
         return $this->render('temperature/average.html.twig', [
-            'title'                   => 'Average Temperature Evolution Per Area (1961-2024)',
+            'title' => 'Average Temperature Evolution Per Area (1961-2024)',
             'average_temper_chart' => $averageTemperChart,
         ]);
     }
