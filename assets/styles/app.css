@@ -1,5 +1,5 @@
-body {
-    background-color: #fff9eb;
+.initial-body-color {
+    background-color: #ccfdf3;
 }
 
 #burgerMenuButton::after{
@@ -8,4 +8,11 @@ body {
 
 #website-title {
     border-bottom: solid #0A6883 5px;
+}
+
+.temper-chart {
+    max-width: 1100px;
+    max-height: 600px;
+    background-color: white;
+    opacity: 75%;
 }

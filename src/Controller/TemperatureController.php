@@ -10,7 +10,6 @@ use Symfony\Component\Routing\Attribute\Route;
 use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
 use Symfony\UX\Chartjs\Model\Chart;
 
-#[Route('/temperature', name: 'temperature_')]
 final class TemperatureController extends AbstractController
 {
     #[Route('/', name: 'index')]
@@ -19,7 +18,7 @@ final class TemperatureController extends AbstractController
         return $this->redirectToRoute('temperature_evolution');
     }
 
-    #[Route('/evolution', name: 'evolution')]
+    #[Route('/evolution', name: 'temperature_evolution')]
     public function temperatureAnalysis(DataService $dataService, ChartBuilderInterface $chartBuilder): Response
     {
         $countries = ['World', 'Americas', 'Africa', 'Europe', 'Asia', 'Oceania'];
@@ -71,11 +70,12 @@ final class TemperatureController extends AbstractController
 
         return $this->render('temperature/index.html.twig', [
             'title' => 'Temperature Evolution (1961-2024)',
-            'temper_chart' => $temperChart,
+            'evolution_temper_chart' => $temperChart,
+            'background_color' => '#93a8f1',
         ]);
     }
 
-    #[Route('/average', name: 'average')]
+    #[Route('/average', name: 'temperature_average')]
     public function averageEvolution(DataService $dataService, ChartBuilderInterface $chartBuilder): Response
     {
         $countries = ['World','Americas', 'Africa', 'Europe', 'Asia', 'Oceania'];
@@ -113,9 +113,9 @@ final class TemperatureController extends AbstractController
             ]
         ]);
 
-        return $this->render('temperature/index.html.twig', [
+        return $this->render('temperature/average.html.twig', [
             'title'                   => 'Average Temperature Evolution Per Area (1961-2024)',
-            'temper_chart' => $averageTemperChart,
+            'average_temper_chart' => $averageTemperChart,
         ]);
     }
 }

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body_header %}
+    {% include 'components/main-header.html.twig' %}
+{% endblock %}
+{% block barba %}
+<main data-barba="container" data-barba-namespace="temper-average">
+    <h2 class="text-center mt-5">{{ title }}</h2>
+    <div class="d-flex justify-content-center align-items-center">
+        <div id="temper-chart-container" class="d-flex justify-content-center w-75 h-75">
+            {{ render_chart(average_temper_chart, {'class': 'temper-chart'}) }}
+        </div>
+    </div>
+</main>
+{% endblock %}

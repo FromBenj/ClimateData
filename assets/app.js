@@ -1,8 +1,9 @@
+import 'bootstrap';
 import './styles/app.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap';
 
 
+import './js/barba-transition.js'
 import { startStimulusApp } from '@symfony/stimulus-bundle';
 const app = startStimulusApp();
 
